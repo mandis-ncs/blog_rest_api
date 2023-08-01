@@ -1,0 +1,39 @@
+package com.mandis.blog.demo.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+
+@Entity
+@Table(name = "posts", uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})})
+
+public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @Column(name = "content", nullable = false)
+    private String content;
+
+}
+
+
+/*
+* {
+    "title" : "algum",
+    "description" : "algum",
+    "content" : "algum"
+}
+* */
