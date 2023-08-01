@@ -3,6 +3,9 @@ package com.mandis.blog.demo.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @ToString
@@ -27,6 +30,8 @@ public class Post {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Comment> comments = new HashSet<>();
 }
 
 
@@ -37,3 +42,7 @@ public class Post {
     "content" : "algum"
 }
 * */
+// @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+// cascade -> determine that all operations of Post is applicable for Comments
+// orphanRemoval -> determine that if the parent Post is excluded of bd, Comment will too
+

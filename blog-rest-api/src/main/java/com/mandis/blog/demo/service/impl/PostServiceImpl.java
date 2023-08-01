@@ -6,6 +6,7 @@ import com.mandis.blog.demo.payload.PostDto;
 import com.mandis.blog.demo.payload.PostResponse;
 import com.mandis.blog.demo.repository.PostRepository;
 import com.mandis.blog.demo.service.PostService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,6 +23,8 @@ public class PostServiceImpl implements PostService {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
     public PostDto createPost(PostDto postDto) {
@@ -38,6 +41,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir) {
 
+        // verifies if sortDir == asc ?, if it is true sort ascending : if it is not sort descending
         Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
                 : Sort.by(sortBy).descending();
 
@@ -83,19 +87,10 @@ public class PostServiceImpl implements PostService {
     }
 
     private PostDto mapToDTO(Post post) {
-        PostDto postDto = new PostDto();
-        postDto.setId(post.getId());
-        postDto.setTitle(post.getTitle());
-        postDto.setDescription(post.getDescription());
-        postDto.setContent(post.getContent());
-        return postDto;
+        return mapper.map(post, PostDto.class);
     }
 
     private Post mapToEntity(PostDto postDto) {
-        Post post = new Post();
-        post.setTitle(postDto.getTitle());
-        post.setDescription(postDto.getDescription());
-        post.setContent(postDto.getContent());
-        return post;
+        return mapper.map(postDto, Post.class);
     }
 }
