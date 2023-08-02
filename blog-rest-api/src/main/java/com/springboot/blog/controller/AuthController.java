@@ -40,3 +40,10 @@ public class AuthController {
     }
 
 }
+
+/*
+* {
+    "usernameOrEmail" : "admin@gmail.com",
+    "password" : "admin123"
+}
+* */
