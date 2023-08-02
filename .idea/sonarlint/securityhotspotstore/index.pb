@@ -41,5 +41,3 @@ Ublog-rest-api/src/main/java/com/springboot/blog/exception/GlobalExceptionHandle
 Nblog-rest-api/src/main/java/com/springboot/blog/repository/UserRepository.java,6\7\6718ab4f92bbad349c3fc2d4a9d80df904060a02
 ~
 Nblog-rest-api/src/main/java/com/springboot/blog/repository/RoleRepository.java,4\7\47e8edcc0e72264e941e9535e14b44cb2cb5d9db
-E
-blog-rest-api/pom.xml,0\3\03d5152021a28c08738105cfe49e05a4aa364ddd
