@@ -56,8 +56,8 @@ public class CommentController {
 }
 /*
 * {
-    "name" : "amanda",
-    "email" : "amanda@gmail.com",
-    "body" : "oie"
+    "name" : "user",
+    "email" : "user@gmail.com",
+    "body" : "user body"
 }
 * */

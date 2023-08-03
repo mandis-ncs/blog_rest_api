@@ -138,17 +138,11 @@ public class PostController {
 
 }
 
-// Versioning
-// 1 - By URI (ex: " @GetMapping("api/v2/posts") ")
-// 2 - By Params (ex: " @GetMapping(value = "api/posts/{id}", params = "version=2") ")
-// 3 - By Headers (ex: " @GetMapping(value = "api/posts/{id}", headers = "X-API-VERSION=2") ")
-// 4 - By Content Negotiation (ex: " @GetMapping(value = "api/posts/{id}", produces = "application/vnd.javaguides.v2+json") ")
-
 
 /*
 * {
     "title" : "new post",
-    "description" : "new post at least some characters",
-    "content" : "new post  at least some characters"
+    "description" : "new post with at least some ten characters",
+    "content" : "new post with at least some ten characters"
 }
 * */

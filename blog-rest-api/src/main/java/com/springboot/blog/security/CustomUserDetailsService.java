@@ -38,9 +38,3 @@ public class CustomUserDetailsService implements UserDetailsService {
                 authorities);
     }
 }
-
-// Explanation
-// Set<GrantedAuthority> authorities = user -> transforming user in a GrantedAuthority
-// SimpleGrantedAuthority -> is an implementation of  GrantedAuthority interface
-// returns a 'org.springframework.security.core.userdetails.User' not only a User ...
-//      to separate user domain model and the new user authentication (that is returned in this method)
